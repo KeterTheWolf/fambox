@@ -7,14 +7,28 @@ def blank():
    button.pack()
 
 menubar = Menu(base)
-filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="1", command=blank)
-filemenu.add_command(label="2", command=blank)
-filemenu.add_command(label="3", command=blank)
-filemenu.add_command(label="4", command=blank)
-filemenu.add_command(label="5", command=blank)
-filemenu.add_separator()
-filemenu.add_command(label="Exit", command=base.quit)
 
-menubar.add_cascade(label="Fambox", menu=filemenu)
+firstmenu = Menu(menubar, tearoff=0)
+firstmenu.add_command(label="1", command=blank)
+firstmenu.add_command(label="2", command=blank)
+firstmenu.add_command(label="3", command=blank)
+firstmenu.add_command(label="4", command=blank)
+firstmenu.add_command(label="5", command=blank)
+firstmenu.add_separator()
+firstmenu.add_command(label="Exit", command=base.quit)
+
+secondmenu = Menu(menubar, tearoff=0)
+secondmenu.add_command(label="1", command=blank)
+secondmenu.add_command(label="2", command=blank)
+secondmenu.add_command(label="3", command=blank)
+
+helpmenu = Menu(menubar, tearoff=0)
+helpmenu.add_command(label="Credits", command=blank)
+helpmenu.add_command(label="Guide", command=blank)
+helpmenu.add_command(label="Report a bug", command=blank)
+
+menubar.add_cascade(label="Fambox", menu=firstmenu)
+menubar.add_cascade(label="Test", menu=secondmenu)
+menubar.add_cascade(label="Help", menu=helpmenu)
+
 base.config(menu=menubar)
