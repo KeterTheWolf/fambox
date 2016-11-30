@@ -1,4 +1,4 @@
-sfrom tkinter import *
+from tkinter import *
 from __main__ import *
 
 def blank():
